@@ -1,52 +1,83 @@
 import axios from 'axios';
-import './App.css';
-import {useState, useEffect } from 'react';
+import { useState} from 'react';
+import styled from 'styled-components';
 
-const URL = "/B551182/";
-function API() {
- 
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-  
-    const fetchData = async () => {
+function API() 
+{
+  const [location, setLocation] = useState('');
+  const [result, setResult] = useState({});
+  const API_KEY = "RnKRYrieWKSXFg3fIq%2Fd%2BErYYCscM%2F1MAaDkN7iOvXc7r3vVny3HEe2ahsjoeGxTzUI3Cf71lPWfquc0GPykBg%3D%3D"; // 각자 개인의 API KEY를 발급받아 사용해주세요. 
+
+  // const url = `http://apis.data.go.kr/1360000/AsosDalyInfoService/getWthrDataList?q=${location}&appid=${API_KEY}`;
+  const url = `http://apis.data.go.kr/1360000/AsosDalyInfoService/getWthrDataList?q=${location}&appid=${API_KEY}`;
+  const searchWeather = async (e) => {
+    if(e.key === 'Enter') {
       try {
-        setError(null);
-        setData(null);
-        setLoading(true);
-  
-        const response = await axios.get(URL, {
-          params: {
-            serviceKey: process.env.REACT_APP_API_KEY,
-            numOfRows: 1,
-            pageNo: 10
-          }
-        });
-  
-        setData(response.data);
-      } catch(e) {
-        setError(e);
+        const data = await axios({
+          method: 'get',
+          url: url,
+        })
+        setResult(data);
+        console.log(data);
+      } 
+      catch(err) {
+        alert(err);
       }
-      setLoading(false);
-    };
-  
-    useEffect(() => {
-      fetchData();
-    }, []);
-  
-    if(loading) return <div>Loading...</div>;
-    if(error)   return <div>Error...</div>;
-    if(!data)   return null;
-  
-    return (
-      <div className="App">
-        <p>병원명 : { data.response.body.items.item.yadmNm }</p>
-        <p>주소 : { data.response.body.items.item.addr }</p>
-        <p>전화번호 : { data.response.body.items.item.telno }</p>
-        <p>RAT(신속항원검사) 가능 여부 : { data.response.body.items.item.ratPsblYn }</p>
-        <p>PCR 가능 여부 : { data.response.body.items.item.pcrPsblYn }</p>
-      </div>
-    );
+    }
   }
- 
+  return (
+    <AppWrap>
+      <div className="appContentWrap">
+        <input
+          placeholder="도시를 입력하세요"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          type="text"
+          onKeyDown={searchWeather}
+        />
+        {Object.keys(result).length !== 0 && (
+          <ResultWrap>
+            <div className="city">{result.data.name}</div>
+            <div className="temperature">
+              {result.data.avgTa}
+            </div>
+          </ResultWrap>
+        )}
+      </div>
+    </AppWrap>
+  );
+}
+
 export default API;
+
+const AppWrap = styled.div`
+  width: 100vw;
+  height: 100vh;
+  .appContentWrap {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    padding: 20px;
+  }
+  input {
+    padding: 16px;
+    border: 2px black solid;
+    border-radius: 16px;
+  }
+`;
+
+const ResultWrap = styled.div`
+  margin-top: 60px;
+  border: 1px black solid;
+  padding: 10px;
+  border-radius: 8px;
+  .city {
+    font-size: 24px;
+  }
+  .temperature {
+    font-size: 60px;
+    margin-top: 8px;
+  }
+
+`;

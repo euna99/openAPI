@@ -7,9 +7,7 @@ function API()
   const [location, setLocation] = useState('');
   const [result, setResult] = useState({});
   const API_KEY = "RnKRYrieWKSXFg3fIq%2Fd%2BErYYCscM%2F1MAaDkN7iOvXc7r3vVny3HEe2ahsjoeGxTzUI3Cf71lPWfquc0GPykBg%3D%3D"; // 각자 개인의 API KEY를 발급받아 사용해주세요. 
-
-  // const url = `http://apis.data.go.kr/1360000/AsosDalyInfoService/getWthrDataList?q=${location}&appid=${API_KEY}`;
-  const url = `http://apis.data.go.kr/1360000/AsosDalyInfoService/getWthrDataList?q=${location}&appid=${API_KEY}`;
+  const url = `/AsosDalyInfoService/getWthrDataList?q=${location}&appid=${API_KEY}`;
   const searchWeather = async (e) => {
     if(e.key === 'Enter') {
       try {

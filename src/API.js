@@ -29,7 +29,7 @@ function API()
     <AppWrap>
       <div className="appContentWrap">
         <input
-          placeholder="도시를 입력하세요"
+          placeholder="도시를 입력하세요!"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           type="text"

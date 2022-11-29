@@ -44,7 +44,7 @@ function API(){
   }, []);
 
   return (
-    <div> </div>
+    <header>{temp}℃ </header>
     // <AppWrap>
     //   <div className="appContentWrap">
     //     <input

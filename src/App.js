@@ -1,8 +1,10 @@
 import './App.css';
-import API from './API';
+import Footer from './Footer';
 function App() {
   return (
-    <API/>
+
+        <Footer/>
+
   );
 }
 

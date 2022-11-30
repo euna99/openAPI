@@ -1,6 +1,7 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
-// import './css/weather';
+import {BsFillCloudFill} from 'react-icons/bs';
+
+ // import './css/weather';
 
 function Footer(){
   const [coords, saveCoords] = useState();
@@ -44,13 +45,13 @@ function Footer(){
   }, []);
 
   console.log(temp);
-  console.log("날씨"+weather)
+  console.log("날씨"+weather);
 
   return (
     <div>
     <footer>
-      현재 기온: {temp}℃
-      현재 날씨 : {weather}
+      현재 기온: {temp}℃<br/>
+      <span>현재 날씨 : {weather}</span>
       </footer>
     </div>
   );

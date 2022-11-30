@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import {BsFillCloudFill} from 'react-icons/bs';
+import './css/weather.css'
 
  // import './css/weather';
 
@@ -44,14 +45,18 @@ function Footer(){
     requestCoords();
   }, []);
 
+  
+
   console.log(temp);
   console.log("날씨"+weather);
-
   return (
     <div>
     <footer>
-      현재 기온: {temp}℃<br/>
-      <span>현재 날씨 : {weather}</span>
+      <div className="temp_div">
+      현재 기온: {temp}℃
+      </div>
+      <div>현재 날씨 : {weather}
+      </div>
       </footer>
     </div>
   );

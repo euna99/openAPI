@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import styled from 'styled-components';
 
-function App() {
+function Weather() {
   const [location, setLocation] = useState('');
   const [result, setResult] = useState({});
   const API_KEY = "6bedce92f708cdeb65b084ee01b825c0"; // 각자 개인의 API KEY를 발급받아 사용해주세요. 
@@ -48,7 +48,7 @@ function App() {
   );
 }
 
-export default App;
+export default Weather;
 
 const AppWrap = styled.div`
   width: 100vw;

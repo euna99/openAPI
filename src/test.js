@@ -1,23 +1,30 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-function Test(){
-    const [result, setResult] = useState({});
+function Covid(){
+    const [data, setData] = useState({});
     const API_KEY="RnKRYrieWKSXFg3fIq%2Fd%2BErYYCscM%2F1MAaDkN7iOvXc7r3vVny3HEe2ahsjoeGxTzUI3Cf71lPWfquc0GPykBg%3D%3D";
-    const url=`https://apis.data.go.kr/6460000/jnKolas/getSearchBookNewList?serviceKey=${API_KEY}&searchWord=%EC%84%9C%EC%9C%A0%EB%9F%BD&pageSize=10&startPage=0&`
-    const searchBook = async () => {
+
+    const url=`https://apis.data.go.kr/1352000/ODMS_COVID_05/callCovid05Api?serviceKey=${API_KEY}&pageNo=1&numOfRows=500&apiType=json`
+    const CovidCall = async () => {
         try {
-          const data= await axios({
+          const response= await axios(url,{
             method: 'get',
             url: url,
-          })
-          setResult(data);
-          console.log("책"+data);
+            headers: {
+              'Access-Control-Allow-Origin': '*',
+              'Content-Type': 'application/xml; charset=utf-8',
+            },
+            withCredentials: true,
+            credentials: 'same-origin',
+          });
+          setResult(response.data);
+          console.log("Covid"+response.data);
         } 
         catch(err) {
           alert(err);
         }
-    }
+    };
 
     useEffect(()=>{
       searchBook();
@@ -27,4 +34,4 @@ function Test(){
         <div></div>
       );
       }
-      export default Test;
+      export default Covid;

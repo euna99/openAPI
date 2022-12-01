@@ -1,11 +1,12 @@
 import './App.css';
 import Footer from './Footer';
-import Test from './test';
+// import Weather from './weather';
+import Covid from './test';
 
 function App() {
   return (
     <div>
-        <Test/>
+        <Covid/>
         <Footer/>
     </div>
   );

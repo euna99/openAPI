@@ -7,6 +7,9 @@ module.exports = function(app)
     '/apis',
     createProxyMiddleware({
         target: 'http://apis.data.go.kr',
+        pathRewrite: {
+            '^/apis':''
+          },
         changeOrigin: true,
       })
   )

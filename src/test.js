@@ -24,7 +24,9 @@ function Covid(){
     },[])
 
     return (
-        <div></div>
+        <div>
+
+        </div>
       );
       }
       export default Covid;

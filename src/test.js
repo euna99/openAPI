@@ -14,8 +14,8 @@ function Covid(){
             url: url
           },
           );
-          setData(response)
-          console.log("---COVID----"+response)
+          setData(response.data)
+          console.log("---COVID----"+response.data)
           // console.log("---responsetype: "+typeof(response)); // 객체 //object
           // console.log("---responsedatatype:"+typeof(response.data)); //string // 값이 나오고 
         } 

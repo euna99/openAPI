@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 function Seoul(){
     const [data, setData] = useState(null);
+
     const url=`http://openapi.seoul.go.kr:8088/${process.env.REACT_APP_SEOUL}/json/SearchParkInfoService/1/5`
     const SeoulCall = async () => {
         try {
@@ -14,7 +15,7 @@ function Seoul(){
           }
           );
           setData(response.data)
-          console.log(response.data.SearchParkInfoService.row[1].P_PARK)
+          console.log(response.data.SearchParkInfoService.row[0].P_PARK)
           // console.log("---responsetype: "+typeof(response)); // 객체 //object
           // console.log("---responsedatatype:"+typeof(response.data)); //string // 값이 나오고 
         } 
@@ -30,6 +31,7 @@ function Seoul(){
     
     return (
         <div>
+            {data!==null&&data.SearchParkInfoService.row[0].P_PARK}
         </div>
       );
       }

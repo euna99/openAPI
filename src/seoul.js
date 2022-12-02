@@ -32,6 +32,10 @@ function Seoul(){
     return (
         <div>
             {data!==null&&data.SearchParkInfoService.row[0].P_PARK}
+            {/* {data.SearchParkInfoService.row[0].P_PARK} */} 
+            {/* useEffect(()=>{
+                렌더링 과정 공부하기 
+            }) */}
         </div>
       );
       }

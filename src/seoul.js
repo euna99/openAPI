@@ -1,21 +1,20 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-function Covid(){
+function Seoul(){
     const [data, setData] = useState(null);
-    const url=`/apis/1352000/ODMS_COVID_05/callCovid05Api?serviceKey=${process.env.REACT_APP_OPEN}&pageNo=1&numOfRows=500&apiType=json&create_dt=2022-01-08`
-    
-    const CovidCall = async () => {
+    const url=`http://openapi.seoul.go.kr:8088/${process.env.REACT_APP_SEOUL}/json/SearchParkInfoService/1/5`
+    const SeoulCall = async () => {
         try {
           const response= await axios(
           {
             method: 'get',
-            type:"json",
+            type:'json',
             url: url
-          },
+          }
           );
-          setData(response)
-          console.log("---COVID----"+response)
+          setData(response.data)
+          console.log(response.data.SearchParkInfoService.row[1].P_PARK)
           // console.log("---responsetype: "+typeof(response)); // 객체 //object
           // console.log("---responsedatatype:"+typeof(response.data)); //string // 값이 나오고 
         } 
@@ -25,14 +24,13 @@ function Covid(){
     };
 
     useEffect(()=>{
-      CovidCall();
+      SeoulCall();
     },[])
 
     
     return (
         <div>
-          {data}
         </div>
       );
       }
-      export default Covid;
+      export default Seoul;

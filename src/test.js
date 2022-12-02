@@ -1,17 +1,10 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import XMLParser from "react-xml-parser";
 
 function Covid(){
-    // const [data, setData] = useState({});
+    const [data, setData] = useState(null);
     const url=`/apis/1352000/ODMS_COVID_05/callCovid05Api?serviceKey=${process.env.REACT_APP_OPEN}&pageNo=1&numOfRows=500&apiType=json&create_dt=2022-01-08`
     
-    function parseStr(dataSet) {
-      const dataArr = new XMLParser().parseFromString(dataSet).children;
-      console.log(dataArr);
-    }
-    
-  
     const CovidCall = async () => {
         try {
           const response= await axios(
@@ -20,12 +13,11 @@ function Covid(){
             type:"json",
             url: url
           },
-          ).then(function (response) {
-            const dataSet = response.data;
-            parseStr(dataSet);
-          });
-         
-          // console.log("---responsetype: "+typeof(response)); // 객체 //object  // console.log("---responsedatatype:"+typeof(response.data)); //string // 값이 나오고 
+          );
+          setData(response.data)
+          console.log("---COVID----"+response.data)
+          // console.log("---responsetype: "+typeof(response)); // 객체 //object
+          // console.log("---responsedatatype:"+typeof(response.data)); //string // 값이 나오고 
         } 
         catch(err) {
           alert(err);
@@ -34,13 +26,12 @@ function Covid(){
 
     useEffect(()=>{
       CovidCall();
-    },[])
+    },[ ])
 
-    // console.log(response.body)
-
+    
     return (
         <div>
-          {/* {response.body.items.item.confCase} */}
+          {data.body}
         </div>
       );
       }

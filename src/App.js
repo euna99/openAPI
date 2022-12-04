@@ -1,13 +1,12 @@
-import './App.css';
+import './css/App.css';
 import Footer from './Footer';
 import Seoul from './seoul';
-// import Weather from './weather';
 import Covid from './test';
 
 function App() {
   return (
     <div>
-        <Covid/>
+        {/* <Covid/> */}
         <Seoul/>
         <Footer/>
     </div>

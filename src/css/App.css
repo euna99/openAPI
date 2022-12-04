@@ -37,6 +37,13 @@
   }
 }
 
-/* html{
-  background-image:url("../src/img/sky.jpg");
+html{
+  background-image: linear-gradient(to bottom,beige, bisque,plum);
+  height: 100vw;
+}
+
+/* .covid{
+  background-image: linear-gradient(to bottom, red, yellow);
+  height: 400px;
 } */
+

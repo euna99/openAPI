@@ -15,7 +15,7 @@ function Seoul(){
           }
           );
           setData(response.data)
-          console.log(response.data.SearchParkInfoService.row[0].P_PARK)
+          // console.log(response.data.SearchParkInfoService.row[0].P_PARK)
           // console.log("---responsetype: "+typeof(response)); // 객체 //object
           // console.log("---responsedatatype:"+typeof(response.data)); //string // 값이 나오고 
         } 
@@ -27,6 +27,9 @@ function Seoul(){
     useEffect(()=>{
       SeoulCall();
     },[])
+
+
+  
 
     
     return (

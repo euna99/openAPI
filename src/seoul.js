@@ -28,8 +28,8 @@ function Seoul(){
       SeoulCall();
     },[])
 
-
   
+  // map 함수 만들기 
 
     
     return (

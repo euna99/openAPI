@@ -31,6 +31,7 @@ function Seoul(){
     const newList=data.SearchParkInfoService.row.P_PARK;
 
   
+  // map 함수 만들기 
 
     
     return (

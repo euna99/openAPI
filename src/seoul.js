@@ -28,13 +28,14 @@ function Seoul(){
       SeoulCall();
     },[])
 
+    const newList=data.SearchParkInfoService.row.P_PARK;
 
   
 
     
     return (
         <div>
-            {data!==null&&data.SearchParkInfoService.row[0].P_PARK}
+            {data!==null&&newList}
             {/* {data.SearchParkInfoService.row[0].P_PARK} */} 
             {/* useEffect(()=>{
                 렌더링 과정 공부하기 

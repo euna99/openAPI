@@ -28,7 +28,7 @@ function Seoul(){
       SeoulCall();
     },[])
 
-    const newList=data.SearchParkInfoService.row.P_PARK;
+    // const newList=data.SearchParkInfoService.row.P_PARK;
 
   
   // map 함수 만들기 
@@ -36,7 +36,7 @@ function Seoul(){
     
     return (
         <div>
-            {data!==null&&newList}
+            {data!==null&&data.SearchParkInfoService.row[0].P_PARK}
             {/* {data.SearchParkInfoService.row[0].P_PARK} */} 
             {/* useEffect(()=>{
                 렌더링 과정 공부하기 

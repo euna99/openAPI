@@ -15,6 +15,9 @@ function Seoul(){
           }
           );
           setData(response.data.SearchParkInfoService);
+          const ssData=data.SearchParkInfoService.row;
+          console.log("sss");
+          console.log(ssData);
           console.log("fff");
           console.log(response.data.SearchParkInfoService.row);
           //row[] (X) // row .P_PARK 
@@ -30,12 +33,22 @@ function Seoul(){
       SeoulCall();
     },[])
 
-
-
+    // const ssData=data.SearchParkInfoService.row;
+    // console.log("sss");
+    // console.log(ssData);
     
     return (
         <div>
-            {data!==null&&data.row[0].P_PARK}
+            {/* {data!==null&&data.row[0].P_PARK} */}
+            <ul>
+            {data!==null&&ssData.map(() => (
+            <li key={ssData.P_IDX}> 
+            <div>
+              {ssData.P_PARK}
+            </div>
+            </li>
+            ))};
+            </ul>
             {/* {data.SearchParkInfoService.row[0].P_PARK} */} 
             {/* useEffect(()=>{
                 렌더링 과정 공부하기 

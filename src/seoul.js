@@ -14,8 +14,10 @@ function Seoul(){
             url: url
           }
           );
-          setData(response.data)
-          // console.log(response.data.SearchParkInfoService.row[0].P_PARK)
+          setData(response.data.SearchParkInfoService);
+          console.log("fff");
+          console.log(response.data.SearchParkInfoService.row);
+          //row[] (X) // row .P_PARK 
           // console.log("---responsetype: "+typeof(response)); // 객체 //object
           // console.log("---responsedatatype:"+typeof(response.data)); //string // 값이 나오고 
         } 
@@ -28,15 +30,12 @@ function Seoul(){
       SeoulCall();
     },[])
 
-    // const newList=data.SearchParkInfoService.row.P_PARK;
 
-  
-  // map 함수 만들기 
 
     
     return (
         <div>
-            {data!==null&&data.SearchParkInfoService.row[0].P_PARK}
+            {data!==null&&data.row[0].P_PARK}
             {/* {data.SearchParkInfoService.row[0].P_PARK} */} 
             {/* useEffect(()=>{
                 렌더링 과정 공부하기 

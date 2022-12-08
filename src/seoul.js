@@ -19,7 +19,7 @@ function Seoul(){
           console.log("fff");
           console.log(response.data.SearchParkInfoService);
           
-          ssData=data;
+          ssData=data.row;
           console.log("sss");
           console.log(ssData);
 

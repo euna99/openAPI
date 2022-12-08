@@ -16,12 +16,12 @@ function Seoul(){
           }
           );
           setData(response.data.SearchParkInfoService);
-          console.log("fff");
-          console.log(response.data.SearchParkInfoService);
+          // console.log("fff");
+          // console.log(response.data.SearchParkInfoService.row[2]);
           
-          ssData=data.row;
-          console.log("sss");
-          console.log(ssData);
+          // ssData=data;
+          // console.log("sss");
+          // console.log(ssData);
 
           //row[] (X) // row .P_PARK 
           // console.log("---responsetype: "+typeof(response)); // 객체 //object
@@ -45,7 +45,23 @@ function Seoul(){
       //       }) */}
     return (
         <div>
-          {/* {data!==null&&data.row[0].P_PARK} */}
+          <ul>
+            <li>
+            {data!==null&&data.row[2].P_PARK}
+            </li>
+            <li>
+            {data!==null&&data.row[1].P_PARK}
+            </li>
+            <li>
+            {data!==null&&data.row[0].P_PARK}
+            </li>
+            <li>
+            {data!==null&&data.row[3].P_PARK}
+            </li>
+            <li>
+            {data!==null&&data.row[4].P_PARK}
+            </li>
+          </ul>
             {/* <ul>
             {data!==null&&ssData.map(() => (
             <li key={ssData.P_IDX}> 

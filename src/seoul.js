@@ -19,9 +19,9 @@ function Seoul(){
           // console.log("fff");
           // console.log(response.data.SearchParkInfoService.row[2]);
           
-          // ssData=data;
-          // console.log("sss");
-          // console.log(ssData);
+          ssData=data;
+          console.log("sss");
+          console.log(ssData);
 
           //row[] (X) // row .P_PARK 
           // console.log("---responsetype: "+typeof(response)); // 객체 //object

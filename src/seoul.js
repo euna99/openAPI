@@ -16,8 +16,8 @@ function Seoul(){
           }
           );
           setData(response.data.SearchParkInfoService);
-          // console.log("fff");
-          // console.log(response.data.SearchParkInfoService.row[2]);
+          console.log("fff");
+          console.log(response.data.SearchParkInfoService.row[2]);
           
           ssData=data;
           console.log("sss");

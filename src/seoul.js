@@ -5,7 +5,7 @@ function Seoul(){
     const [data, setData] = useState(null);
     const ssData=useState([]);
 
-    const url=`http://openapi.seoul.go.kr:8088/${process.env.REACT_APP_SEOUL}/json/SearchParkInfoService/1/5`
+    const url=`http://openapi.seoul.go.kr:8088/${process.env.REACT_APP_SEOUL}/json/SearchParkInfoService/1/100/`
     const SeoulCall = async () => {
         try {
           const response= await axios(
@@ -17,7 +17,7 @@ function Seoul(){
           );
           setData(response.data.SearchParkInfoService);
           console.log("fff");
-          console.log(response.data.SearchParkInfoService.row[2]);
+          console.log(response.data.SearchParkInfoService);
           
           ssData=data;
           console.log("sss");

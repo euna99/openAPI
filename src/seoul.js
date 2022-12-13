@@ -3,9 +3,8 @@ import { useEffect, useState } from 'react';
 
 function Seoul(){
     const [data, setData] = useState(null);
-    const ssData=useState([]);
-
-    const url=`http://openapi.seoul.go.kr:8088/${process.env.REACT_APP_SEOUL}/json/SearchParkInfoService/1/100/`
+    
+    const url=`http://openapi.seoul.go.kr:8088/${process.env.REACT_APP_SEOUL}/json/SearchParkInfoService/1/1000/`
     const SeoulCall = async () => {
         try {
           const response= await axios(
@@ -18,11 +17,6 @@ function Seoul(){
           setData(response.data.SearchParkInfoService);
           console.log("fff");
           console.log(response.data.SearchParkInfoService);
-          
-          ssData=data;
-          console.log("sss");
-          console.log(ssData);
-
           //row[] (X) // row .P_PARK 
           // console.log("---responsetype: "+typeof(response)); // 객체 //object
           // console.log("---responsedatatype:"+typeof(response.data)); //string // 값이 나오고 

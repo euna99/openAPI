@@ -39,24 +39,11 @@ function Seoul(){
       //       }) */}
     return (
         <div>
-          <ul>
-            <li>
-              {data?.map((v)=>(
-                <div id={v.P_IDX}>
-                  {v.P_PARK}
-                </div>
-              ))}
-            </li>
-          </ul>
-            {/* <ul>
-            {data!==null&&ssData.map(() => (
-            <li key={ssData.P_IDX}> 
-            <div>
-              {ssData.P_PARK}
+          {data?.map((v)=>(
+            <div id={v.P_IDX}>
+              {v.P_PARK}
             </div>
-            </li>
-            ))};
-            </ul> */}
+          ))}
         </div>
       );
       }

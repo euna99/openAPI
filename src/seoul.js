@@ -14,9 +14,9 @@ function Seoul(){
             url: url
           }
           );
-          setData(response.data.SearchParkInfoService);
+          setData(response.data.SearchParkInfoService.row);
           console.log("fff");
-          console.log(response.data.SearchParkInfoService);
+          console.log(response.data.SearchParkInfoService.row);
           //row[] (X) // row .P_PARK 
           // console.log("---responsetype: "+typeof(response)); // 객체 //object
           // console.log("---responsedatatype:"+typeof(response.data)); //string // 값이 나오고 
@@ -41,19 +41,11 @@ function Seoul(){
         <div>
           <ul>
             <li>
-            {data!==null&&data.row[2].P_PARK}
-            </li>
-            <li>
-            {data!==null&&data.row[1].P_PARK}
-            </li>
-            <li>
-            {data!==null&&data.row[0].P_PARK}
-            </li>
-            <li>
-            {data!==null&&data.row[3].P_PARK}
-            </li>
-            <li>
-            {data!==null&&data.row[4].P_PARK}
+              {data?.map((v)=>(
+                <div id={v.P_IDX}>
+                  {v.P_PARK}
+                </div>
+              ))}
             </li>
           </ul>
             {/* <ul>

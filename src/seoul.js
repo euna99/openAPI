@@ -38,11 +38,13 @@ function Seoul(){
 //           렌더링 과정 공부하기 
 //       }) */}
 //리스트를 새로 생성해서 인덱스값 넣어주고 
+
     return (
         <div>
           {data?.map((v)=>(
             <div id={v.P_IDX}>
               {v.P_PARK}
+              {v.P_ZONE}
             </div>
           ))}
         </div>

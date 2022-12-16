@@ -25,11 +25,14 @@ function Seoul(){
           alert(err);
         }
     };
-
+    // const mapI=data.map((P_IDX)=>{
+    //   {P_IDX.P_PARK}
+    // })
     useEffect(()=>{
       SeoulCall();
     },[])
 
+    const dataList=data?.map((v)=>(<li key={v.P_IDX}>{v.P_PARK}</li>));
 // const ssData=data.SearchParkInfoService.row;
 // console.log("sss");
 // console.log(ssData);
@@ -41,12 +44,7 @@ function Seoul(){
 
     return (
         <div>
-          {data?.map((v)=>(
-            <div id={v.P_IDX}>
-              {v.P_PARK}
-              {v.P_ZONE}
-            </div>
-          ))}
+          {dataList}
         </div>
       );
       }

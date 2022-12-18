@@ -29,7 +29,7 @@ function Seoul(){
       SeoulCall();
     },[])
 
-    const dataList=data?.map((v)=>(<li key={v.P_IDX}>{v.P_PARK}</li>));
+    const dataList=data?.map((v)=>(<div key={v.P_IDX}>{v.P_PARK}</div>));
     // const result=dataList.filter(word=>word.length>10)
 // const ssData=data.SearchParkInfoService.row;
 // console.log("sss");

@@ -30,7 +30,7 @@ function Seoul(){
     },[])
 
     const dataList=data?.map((v)=>(<li key={v.P_IDX}>{v.P_PARK}</li>));
-    const result=dataList.filter(word=>word.length>10)
+    // const result=dataList.filter(word=>word.length>10)
 // const ssData=data.SearchParkInfoService.row;
 // console.log("sss");
 // console.log(ssData);
@@ -42,7 +42,7 @@ function Seoul(){
 
     return (
         <div>
-          {result}
+          {dataList}
         </div>
       );
       }

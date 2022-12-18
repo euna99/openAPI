@@ -25,14 +25,12 @@ function Seoul(){
           alert(err);
         }
     };
-    // const mapI=data.map((P_IDX)=>{
-    //   {P_IDX.P_PARK}
-    // })
     useEffect(()=>{
       SeoulCall();
     },[])
 
     const dataList=data?.map((v)=>(<li key={v.P_IDX}>{v.P_PARK}</li>));
+    const result=dataList.filter(word=>word.length>10)
 // const ssData=data.SearchParkInfoService.row;
 // console.log("sss");
 // console.log(ssData);
@@ -44,7 +42,7 @@ function Seoul(){
 
     return (
         <div>
-          {dataList}
+          {result}
         </div>
       );
       }

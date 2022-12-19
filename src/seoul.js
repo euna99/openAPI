@@ -28,8 +28,10 @@ function Seoul(){
       SeoulCall();
     },[])
 
-    const dataList=data?.map((v)=>(<div key={v.P_IDX}>{v.P_PARK}</div>));
-// const result=dataList.filter(word=>word.length>10)
+    // console.log(data?.filter(el=>el.P_PARK.length>10));
+    const result=data?.filter(el=>el.P_PARK.length>10)
+
+    // const dataList=data?.map((v)=>(<div key={v.P_IDX}>{v.P_PARK}</div>));
 // const ssData=data.SearchParkInfoService.row;
 // console.log("sss");
 // console.log(ssData);
@@ -41,7 +43,7 @@ function Seoul(){
 
     return (
         <div>
-          {dataList}
+          {result?.map(v=>(<div key={v.P_IDX}>{v.P_PARK}</div>))}
         </div>
       );
       }

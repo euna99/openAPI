@@ -17,7 +17,6 @@ function Seoul(){
           setData(response.data.SearchParkInfoService.row);
           console.log("fff");
           console.log(response.data.SearchParkInfoService.row);
-          //row[] (X) // row .P_PARK 
           // console.log("---responsetype: "+typeof(response)); // 객체 //object
           // console.log("---responsedatatype:"+typeof(response.data)); //string // 값이 나오고 
         } 
@@ -30,7 +29,7 @@ function Seoul(){
     },[])
 
     const dataList=data?.map((v)=>(<div key={v.P_IDX}>{v.P_PARK}</div>));
-    // const result=dataList.filter(word=>word.length>10)
+// const result=dataList.filter(word=>word.length>10)
 // const ssData=data.SearchParkInfoService.row;
 // console.log("sss");
 // console.log(ssData);

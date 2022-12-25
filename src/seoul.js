@@ -32,14 +32,14 @@ function Seoul(){
     const result=data?.filter(el=>el.P_PARK.length>10)
 
     // const dataList=data?.map((v)=>(<div key={v.P_IDX}>{v.P_PARK}</div>));
-// const ssData=data.SearchParkInfoService.row;
-// console.log("sss");
-// console.log(ssData);
-//  {/* {data.SearchParkInfoService.row[0].P_PARK} */} 
-//       {/* useEffect(()=>{
-//           렌더링 과정 공부하기 
-//       }) */}
-//리스트를 새로 생성해서 인덱스값 넣어주고 
+    // const ssData=data.SearchParkInfoService.row;
+    // console.log("sss");
+    // console.log(ssData);
+    //  {/* {data.SearchParkInfoService.row[0].P_PARK} */} 
+    //       {/* useEffect(()=>{
+    //           렌더링 과정 공부하기 
+    //       }) */}
+    //리스트를 새로 생성해서 인덱스값 넣어주고 
 
     return (
         <div>

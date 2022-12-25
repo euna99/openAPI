@@ -39,7 +39,7 @@
 
 html{
   background-image: linear-gradient(to bottom,beige, bisque,plum);
-  /* height: 100vh; */
+  height: 100vh;
   overflow: hidden;
 }
 

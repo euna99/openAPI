@@ -42,7 +42,7 @@ function Seoul(){
     //리스트를 새로 생성해서 인덱스값 넣어주고 
 
     return (
-        <div>
+        <div className="div_container">
           {result?.map(v=>(<div key={v.P_IDX}>{v.P_PARK}</div>))}
         </div>
       );

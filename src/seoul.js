@@ -44,6 +44,7 @@ function Seoul(){
     return (
         <div className="div_container">
           {result?.map(v=>(<div key={v.P_IDX}>{v.P_PARK}</div>))}
+          {/* {result?.map(v=>(<div key={v.P_IDX}>{v.P_IDX}</div>))} */}
         </div>
       );
       }

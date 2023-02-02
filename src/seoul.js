@@ -28,7 +28,6 @@ function Seoul(){
       SeoulCall();
     },[])
 
-    // console.log(data?.filter(el=>el.P_PARK.length>10));
     const result=data?.filter(el=>el.P_PARK.length>10)
 
     // const dataList=data?.map((v)=>(<div key={v.P_IDX}>{v.P_PARK}</div>));
@@ -43,8 +42,8 @@ function Seoul(){
 
     return (
         <div className="div_container">
-          {result?.map(v=>(<div key={v.P_IDX}>{v.P_PARK}</div>))}
-          {/* {result?.map(v=>(<div key={v.P_IDX}>{v.P_IDX}</div>))} */}
+          {result?.map(v=>(<div key={v.P_IDX}>{v.P_PARK} {v.P_IDX}</div>))}
+
         </div>
       );
       }
